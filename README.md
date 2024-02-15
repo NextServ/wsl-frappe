@@ -45,5 +45,3 @@ frappe
 
 ## Ports
 Frappe Bench v13 port - 8000 (site1.localhost:8000)
-Frappe Bench v14 port - 8001 (site1.localhost:8001)
-Frappe Bench v15 port - 8002 (site1.localhost:8002)

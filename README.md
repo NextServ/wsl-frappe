@@ -19,7 +19,7 @@ Enter a password when prompted.
 ## Install frappe installation script
 Clone the script.
 ```
-git clone https://github.com/iaiaian1/wsl-frappe
+git clone -b version-13 https://github.com/NextServ/wsl-frappe.git
 ```
 ```
 cd wsl-frappe

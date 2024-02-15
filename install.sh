@@ -44,8 +44,6 @@ sudo npm install -g yarn
 
 echo "## Bench initialize frappe version 13, 14 and 15"
 bench init --verbose --frappe-path https://github.com/frappe/frappe --frappe-branch version-13 --python /usr/bin/python3.10 frappe-bench13
-bench init --verbose --frappe-path https://github.com/frappe/frappe --frappe-branch version-14 --python /usr/bin/python3.10 frappe-bench14
-bench init --verbose --frappe-path https://github.com/frappe/frappe --frappe-branch version-15 --python /usr/bin/python3.10 frappe-bench15
 
 ## DO NOT INSTALL ANY UNNECESSARY APPS TO AVOID LONG INSTALL TIME
 
@@ -63,51 +61,11 @@ bench set-config developer_mode 1
 bench --site site1.localhost set-maintenance-mode off
 bench config dns_multitenant on
 ./env/bin/pip3 install cython==0.29.21
-./env/bin/pip3 install numpy
-./env/bin/pip3 install numpy-financial
+# ./env/bin/pip3 install numpy
+# ./env/bin/pip3 install numpy-financial
 # Install ERPNext
 echo "# Install ERPNext for Frappe Version 13"
 bench get-app erpnext --branch version-13
-bench install-app erpnext
-./env/bin/pip3 install -e apps/erpnext/
-
-#14
-echo "#######################"
-echo "## Create site1.localhost:8001 and set it as default"
-echo "#######################"
-cd /home/$username/frappe-bench14
-bench new-site site1.localhost --db-root-password frappe --admin-password frappe
-bench use site1.localhost
-bench enable-scheduler
-bench set-config developer_mode 1
-bench --site site1.localhost set-maintenance-mode off
-bench config dns_multitenant on
-./env/bin/pip3 install cython==0.29.21
-./env/bin/pip3 install numpy
-./env/bin/pip3 install numpy-financial
-# Install ERPNext
-echo "# Install ERPNext for Frappe Version 14"
-bench get-app erpnext --branch version-14
-bench install-app erpnext
-./env/bin/pip3 install -e apps/erpnext/
-
-#15
-echo "#######################"
-echo "## Create site1.localhost:8002 and set it as default"
-echo "#######################"
-cd /home/$username/frappe-bench15
-bench new-site site1.localhost --db-root-password frappe --admin-password frappe
-bench use site1.localhost
-bench enable-scheduler
-bench set-config developer_mode 1
-bench --site site1.localhost set-maintenance-mode off
-bench config dns_multitenant on
-./env/bin/pip3 install cython==0.29.21
-./env/bin/pip3 install numpy
-./env/bin/pip3 install numpy-financial
-# Install ERPNext
-echo "# Install ERPNext for Frappe Version 15"
-bench get-app erpnext --branch version-15
 bench install-app erpnext
 ./env/bin/pip3 install -e apps/erpnext/
 
